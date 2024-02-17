@@ -173,7 +173,7 @@ h6 {
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-size: 15px;
-  color: #222222;
+  color: #332E64;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -194,7 +194,7 @@ h6 {
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
-  color: #5cb874;
+  color: #332E64;
   padding: 8px 25px;
   margin-left: 30px;
   border-radius: 4px;
@@ -206,7 +206,7 @@ h6 {
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   background: #5cb874;
-  color: #fff;
+  color: #332E64;
 }
 
 .navbar .dropdown ul {
@@ -277,7 +277,7 @@ h6 {
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  color: #222222;
+  color: #332E64;
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -286,7 +286,7 @@ h6 {
 }
 
 .mobile-nav-toggle.bi-x {
-  color: #fff;
+  color: #332E64;
 }
 
 @media (max-width: 991px) {
