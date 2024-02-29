@@ -2,10 +2,9 @@ let generatedOtp = '';
 
 document.getElementById('sendOtpForm').addEventListener('submit', function(event) {
     event.preventDefault();
+    // Ensure the mobile number is a string and prepend with "91"
     const mobileNumber = "91" + document.getElementById('mobileNumber').value.toString();
     generatedOtp = generateOtp();
-    console.log(generatedOtp);
-    console.log(mobileNumber);
     sendOtpViaWhatsApp(mobileNumber, generatedOtp);
 });
 
@@ -48,8 +47,26 @@ function verifyOtp() {
     const userOtp = document.getElementById('otpInput').value;
     if(userOtp === generatedOtp) {
         alert('OTP Verified Successfully!');
-        // Here you can trigger your Google Apps Script or any other action needed upon successful verification
+        // Retrieve and prepend "91" to the mobile number for consistency
+        const mobileNumber = "91" + document.getElementById('mobileNumber').value.toString();
+        triggerGoogleAppsScript(mobileNumber); // Trigger Google Apps Script with the mobile number
     } else {
         alert('Incorrect OTP, please try again.');
     }
 }
+
+function triggerGoogleAppsScript(mobileNumber) {
+    const scriptUrl = `https://script.google.com/macros/s/AKfycbxbWN0JJHpZa4sQHPiADo34vGZ-mg6BYeor4MPK053u-rxW54ikCXjsapWZAJ-Rk2PNxA/exec=${encodeURIComponent(mobileNumber)}`;
+
+    fetch(scriptUrl)
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            alert('Google Apps Script triggered successfully!');
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert('Error triggering Google Apps Script');
+        });
+}
+
