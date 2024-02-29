@@ -2,7 +2,7 @@ let generatedOtp = '';
 
 document.getElementById('sendOtpForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    const mobileNumber = document.getElementById('mobileNumber').value;
+    const mobileNumber = "91" + document.getElementById('mobileNumber').value.toString();
     generatedOtp = generateOtp();
     sendOtpViaWhatsApp(mobileNumber, generatedOtp);
 });
