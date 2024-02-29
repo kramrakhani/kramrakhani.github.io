@@ -70,4 +70,3 @@ function triggerGoogleAppsScript(mobileNumber) {
             alert('Error triggering Google Apps Script');
         });
 }
-
