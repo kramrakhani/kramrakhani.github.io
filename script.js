@@ -4,6 +4,8 @@ document.getElementById('sendOtpForm').addEventListener('submit', function(event
     event.preventDefault();
     const mobileNumber = "91" + document.getElementById('mobileNumber').value.toString();
     generatedOtp = generateOtp();
+    console.log(generatedOtp);
+    console.log(mobileNumber);
     sendOtpViaWhatsApp(mobileNumber, generatedOtp);
 });
 
