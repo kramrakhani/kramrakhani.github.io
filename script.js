@@ -15,9 +15,16 @@ function generateOtp() {
 function sendOtpViaWhatsApp(mobileNumber, otp) {
     var formdata = new FormData();
     // Update your form data accordingly
-    formdata.append("authToken", "YourAuthToken");
+
+    formdata.append("authToken", "U2FsdGVkX199I1HXlKEBMtBz68ayqMXyv7cH8yyK4e2rG0u3yeL90PpD09bN5Xdj6MIq2P26hMJFHHkXE2u0CcFkUt8cW1Kk3sO3KXLrYl+jEwgv4O92sUOnGG/2uFBQYbyrk2ESeXhryDusEndZ2bLQhSaoJ5HbqNLsGKt4RQMe15++xvIvLuGl/g81rxCG");
     formdata.append("sendto", mobileNumber);
-    formdata.append("data", `Your OTP is: ${otp}`);
+    formdata.append("originWebsite", "https://dia.clothing");
+    formdata.append("templateName", "verify");
+    formdata.append("data[0]",otp );
+    formdata.append("language", "en");
+    
+    
+    
 
     var requestOptions = {
         method: 'POST',
