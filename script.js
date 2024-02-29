@@ -57,7 +57,7 @@ function verifyOtp() {
 
 function triggerGoogleAppsScript(mobileNumber) {
     console.log("app script");
-    const scriptUrl = `https://script.google.com/macros/s/AKfycbxbWN0JJHpZa4sQHPiADo34vGZ-mg6BYeor4MPK053u-rxW54ikCXjsapWZAJ-Rk2PNxA/exec=${encodeURIComponent(mobileNumber)}`;
+    const scriptUrl = `https://script.google.com/macros/s/AKfycbxmbujEM4IU8vwskG-jU3uLj3szn06M2Gv8_rn1h6-hmE6IiVz03voi3e1krgY9zNpSCw/exec=${encodeURIComponent(mobileNumber)}`;
 
     fetch(scriptUrl)
         .then(response => response.json())
