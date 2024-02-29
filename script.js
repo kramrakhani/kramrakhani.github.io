@@ -56,17 +56,17 @@ function verifyOtp() {
 }
 
 function triggerGoogleAppsScript(mobileNumber) {
-    console.log("app script");
-    const scriptUrl = `https://script.google.com/macros/s/AKfycbxmbujEM4IU8vwskG-jU3uLj3szn06M2Gv8_rn1h6-hmE6IiVz03voi3e1krgY9zNpSCw/exec=${encodeURIComponent(mobileNumber)}`;
+    const scriptUrl = `https://script.google.com/macros/s/AKfycbxmbujEM4IU8vwskG-jU3uLj3szn06M2Gv8_rn1h6-hmE6IiVz03voi3e1krgY9zNpSCw/exec?mobileNumber=${encodeURIComponent(mobileNumber)}`;
 
-    fetch(scriptUrl)
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
+    fetch(scriptUrl, { mode: 'no-cors'}) // Add this option to your fetch call
+        .then(response => {
+            console.log('Request successful');
             alert('Google Apps Script triggered successfully!');
+            // Note: The response is opaque, so you can't access `response.json()` or `response.text()`
         })
         .catch((error) => {
             console.error('Error:', error);
             alert('Error triggering Google Apps Script');
         });
 }
+
