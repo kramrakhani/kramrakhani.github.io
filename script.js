@@ -56,7 +56,7 @@ function verifyOtp() {
 }
 
 function triggerGoogleAppsScript(mobileNumber) {
-    const scriptUrl = `https://script.google.com/macros/s/AKfycbxmbujEM4IU8vwskG-jU3uLj3szn06M2Gv8_rn1h6-hmE6IiVz03voi3e1krgY9zNpSCw/exec?mobileNumber=${encodeURIComponent(mobileNumber)}`;
+    const scriptUrl = `https://script.google.com/macros/s/AKfycbxr01VB6BkeEPW2YdPdhHP5IiB74rICLwDEnfDlcyUiW-ErXZsO88IHGehH7YXayD7nKw/exec?mobileNumber=${encodeURIComponent(mobileNumber)}`;
 
     fetch(scriptUrl, { mode: 'no-cors'}) // Add this option to your fetch call
         .then(response => {
