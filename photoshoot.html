@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,5 +19,81 @@
     </div>
 
     <script src="script.js"></script>
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: calc(100% - 22px);
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Your Mobile Number</h2>
+        <form id="sendOtpForm">
+            <input type="text" id="mobileNumber" placeholder="Mobile Number" required>
+            <button type="submit">Send OTP</button>
+        </form>
+
+        <div id="otpSection" style="display:none;">
+            <h2>Enter OTP</h2>
+            <input type="text" id="otpInput" placeholder="OTP" required>
+            <button onclick="verifyOtp()">Verify OTP</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('sendOtpForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('otpSection').style.display = 'block';
+            // Add dynamic feedback here, e.g., "OTP sent" message
+            alert('OTP has been sent. Please check your WhatsApp messages.');
+        });
+
+        // Existing verifyOtp function should be here or in an external script.js
+    </script>
 </body>
 </html>
